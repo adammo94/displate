@@ -1,0 +1,147 @@
+.paw {
+  height: 64px;
+  width: 64px;
+  border-radius: 64px;
+}
+
+.wrapper {
+  background: #1f1f1f;
+  width: 100%;
+  min-height: 100vh;
+  padding: 40px 110px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  justify-content: flex-end;
+  gap: 100px;
+}
+
+.modalImg {
+  max-width: calc(90vw);
+  max-height: calc(90vh - 100px);
+  height: 500px;
+}
+
+.modalLoading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  left: 0;
+  top: 50px;
+  height: calc(100% - 100px);
+  backdrop-filter: blur(5px);
+  position: absolute;
+}
+
+.breedList {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  width: 67%;
+  max-width: 800px;
+  padding: 16px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  & > p {
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+  }
+}
+.left {
+  &Wrapper {
+    display: flex;
+    width: 300px;
+    min-width: 300px;
+    height: 1px;
+    position: relative;
+  }
+  &Container {
+    position: fixed;
+    top: 180px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    & h1,
+    h2 {
+      color: white;
+      text-align: center;
+      margin: 0;
+    }
+    h2 {
+      font-weight: 400;
+    }
+  }
+}
+
+.separator {
+  width: 300px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 1023px) {
+  .wrapper {
+    padding: 30px;
+  }
+  .container {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .left {
+    &Wrapper {
+      height: initial;
+    }
+    &Container {
+      position: relative;
+      top: initial;
+    }
+  }
+  .breedList {
+    width: 100%;
+  }
+}
+
+.modalLoading {
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+@media (max-width: 630px) {
+  .wrapper {
+    width: 100%;
+  }
+  .breedList {
+    width: initial;
+  }
+  .modalImg {
+    object-fit: cover;
+    width: 100%;
+    height: initial;
+    max-height: calc(90vh - 180px);
+  }
+  .leftContainer,
+  .leftWrapper {
+    min-width: initial;
+    width: 100%;
+  }
+  .separator {
+    width: 100%;
+  }
+}
